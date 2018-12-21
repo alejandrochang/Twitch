@@ -1,8 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 const pageOne = () => {
-  return <div>PageOne</div>
+  return <div>PageOne
+    <Link to="page2">TO page 2</Link>
+  </div>
 }
 
 const pageTwo = () => {
