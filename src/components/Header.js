@@ -1,18 +1,20 @@
-import React from 'react';
-import './header.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  return <div className="ui secondary pointing menu">
-      <Link to="/" style={{ color: "white" }} className="item">
+  return (
+    <div className="ui secondary pointing menu">
+      <Link to="/" style={{ color: "#d3cae8" }} className="item">
         Browse
       </Link>
       <div className="right menu">
-        <Link to="/" style={{ color: "white" }} className="item">
+        <Link to="/" style={{ color: "#d3cae8" }} className="item">
           All Streams
         </Link>
       </div>
-    </div>;
-}
+    </div>
+  );
+};
 
 export default Header;
