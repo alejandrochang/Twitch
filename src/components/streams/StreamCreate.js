@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
+import { connect } from 'react-redux';
+import { createStream } from '../../actions';
 
 class StreamCreate extends Component {
   renderError({ error, touched }) {
@@ -51,10 +53,11 @@ const validate = (formValues) => {
   return errors;
 }
 
-export default reduxForm({
+const formWrapped =  reduxForm({
   form: "streamCreate",
   validate 
 })(StreamCreate);
 
+export default connect()(formWrapped)
 // through this form we get access to a ton of props, see them my console.log(this.props)
 // Our errors objects have an identical name to the Fields property name. If they are requested it will show that error message
