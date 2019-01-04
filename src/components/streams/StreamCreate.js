@@ -25,8 +25,8 @@ class StreamCreate extends Component {
     );
   }
 
-  onSubmit(formValues) {
-    console.log(formValues); // this is our form value once we click enter
+  onSubmit = (formValues) => {
+    this.props.createStream(formValues); // this is our form value once we click enter
   }
 
   render() {
@@ -58,6 +58,6 @@ const formWrapped =  reduxForm({
   validate 
 })(StreamCreate);
 
-export default connect()(formWrapped)
+export default connect(null, { createStream })(formWrapped)
 // through this form we get access to a ton of props, see them my console.log(this.props)
 // Our errors objects have an identical name to the Fields property name. If they are requested it will show that error message
